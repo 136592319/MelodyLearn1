@@ -1,8 +1,7 @@
 {
-  "/not-found": "app/not-found.js",
-  "/learn/page": "app/learn/page.js",
-  "/games/page": "app/games/page.js",
   "/page": "app/page.js",
   "/videos/page": "app/videos/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/games/page": "app/games/page.js",
   "/challenges/page": "app/challenges/page.js"
 }
