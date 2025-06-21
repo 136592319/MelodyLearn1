@@ -16,20 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/learn/page.js"
     ],
-    "/games/page": [
+    "/challenges/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/games/page.js"
+      "static/chunks/app/challenges/page.js"
     ],
     "/videos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/videos/page.js"
-    ],
-    "/challenges/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/challenges/page.js"
     ]
   }
 }
