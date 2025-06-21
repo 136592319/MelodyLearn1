@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "games.tsx -> @/components/games/MemoryGame": {
     "id": "games.tsx -> @/components/games/MemoryGame",
@@ -24,3 +25,6 @@
     ]
   }
 }
+=======
+{}
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9

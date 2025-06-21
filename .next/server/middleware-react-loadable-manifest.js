@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 self.__REACT_LOADABLE_MANIFEST="{\"games.tsx -> @/components/games/MemoryGame\":{\"id\":\"games.tsx -> @/components/games/MemoryGame\",\"files\":[\"static/chunks/src_components_games_MemoryGame_tsx.js\"]},\"games.tsx -> @/components/games/PitchGame\":{\"id\":\"games.tsx -> @/components/games/PitchGame\",\"files\":[\"static/chunks/src_components_games_PitchGame_tsx.js\"]},\"games.tsx -> @/components/games/RhythmGame\":{\"id\":\"games.tsx -> @/components/games/RhythmGame\",\"files\":[\"static/chunks/src_components_games_RhythmGame_tsx.js\"]},\"games.tsx -> @/components/games/VirtualPiano\":{\"id\":\"games.tsx -> @/components/games/VirtualPiano\",\"files\":[\"static/chunks/src_components_games_VirtualPiano_tsx.js\"]}}"
+=======
+self.__REACT_LOADABLE_MANIFEST="{}"
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9

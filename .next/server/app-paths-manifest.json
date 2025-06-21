@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
   "/challenges/page": "app/challenges/page.js",
   "/page": "app/page.js",
   "/learn/page": "app/learn/page.js",
+=======
+  "/page": "app/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/games/page": "app/games/page.js",
+  "/challenges/page": "app/challenges/page.js",
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9
   "/videos/page": "app/videos/page.js"
 }

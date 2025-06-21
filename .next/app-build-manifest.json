@@ -16,6 +16,14 @@
       "static/chunks/main-app.js",
       "static/chunks/app/learn/page.js"
     ],
+<<<<<<< HEAD
+=======
+    "/games/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/games/page.js"
+    ],
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9
     "/challenges/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

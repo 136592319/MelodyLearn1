@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\13659\OneDrive\Desktop\Assignment\QIM516\516final\src\app\layout.tsx
+=======
+// File: C:\Users\13659\OneDrive\Desktop\Assignment\QIM516\516final\MelodyLearn\src\app\layout.tsx
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

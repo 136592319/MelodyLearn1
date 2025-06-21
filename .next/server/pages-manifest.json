@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/games": "pages/games.js"
 }
+=======
+{}
+>>>>>>> 1dde1a50902afec21b1c01a19a4f36610d946df9
