@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import BackButton from '@/components/BackButton';
 
 interface Video {
@@ -18,32 +16,11 @@ export default function VideosPage() {
 
   const videos: Video[] = [
     {
-      id: 'youtube1',
-      title: 'Music Learning Example',
-      description: 'A sample YouTube music learning video.',
-      thumbnail: 'https://img.youtube.com/vi/JlZ3_HALx_U/maxresdefault.jpg',
-      embedUrl: 'https://www.youtube.com/embed/JlZ3_HALx_U',
-    },
-    {
-      id: '6S1B_BJtumo',
-    title: 'Rhythm Practice',
-    description: 'Practice rhythm with engaging exercises and examples.',
-    thumbnail: 'https://img.youtube.com/vi/6S1B_BJtumo/maxresdefault.jpg',
-    embedUrl: 'https://www.youtube.com/embed/6S1B_BJtumo',
-    },
-    {
-      id: 'VxF7ebeXjfU',
-    title: 'Music Theory Basics',
-    description: 'Learn the basics of music theory in a simple and fun way.',
-    thumbnail: 'https://img.youtube.com/vi/VxF7ebeXjfU/maxresdefault.jpg',
-    embedUrl: 'https://www.youtube.com/embed/VxF7ebeXjfU',
-    },
-    {
-      id: '_N9coOsrOP4',
-      title: 'Introduction to Instruments',
-      description: 'A video introducing various musical instruments.',
-      thumbnail: 'https://img.youtube.com/vi/_N9coOsrOP4/maxresdefault.jpg',
-      embedUrl: 'https://www.youtube.com/embed/_N9coOsrOP4',
+      id: 'vRmiUtaI81c',
+      title: 'Getting to Know Musical Instruments',
+      description: 'Learn about different musical instruments in this fun introduction video.',
+      thumbnail: 'https://img.youtube.com/vi/vRmiUtaI81c/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/vRmiUtaI81c',
     },
     {
       id: 'S9IMJV6V8Ew',
@@ -53,17 +30,30 @@ export default function VideosPage() {
       embedUrl: 'https://www.youtube.com/embed/S9IMJV6V8Ew',
     },
     {
-      id: 'vRmiUtaI81c',
-      title: 'Getting to Know Musical Instruments',
-      description: 'Learn about different musical instruments in this fun introduction video.',
-      thumbnail: 'https://img.youtube.com/vi/vRmiUtaI81c/maxresdefault.jpg',
-      embedUrl: 'https://www.youtube.com/embed/vRmiUtaI81c',
+      id: '_N9coOsrOP4',
+      title: 'Introduction to Instruments',
+      description: 'A video introducing various musical instruments.',
+      thumbnail: 'https://img.youtube.com/vi/_N9coOsrOP4/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/_N9coOsrOP4',
+    },
+    {
+      id: '6S1B_BJtumo',
+      title: 'Rhythm Practice',
+      description: 'Practice rhythm with engaging exercises and examples.',
+      thumbnail: 'https://img.youtube.com/vi/6S1B_BJtumo/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/6S1B_BJtumo',
+    },
+    {
+      id: 'VxF7ebeXjfU',
+      title: 'Music Theory Basics',
+      description: 'Learn the basics of music theory in a simple and fun way.',
+      thumbnail: 'https://img.youtube.com/vi/VxF7ebeXjfU/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/VxF7ebeXjfU',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navigation />
+    <div className="min-h-screen bg-gray-50 pt-16">
       <BackButton />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -73,27 +63,18 @@ export default function VideosPage() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="text-purple-600 hover:text-purple-800 mb-4"
+                className="text-purple-600 hover:text-purple-800 mb-4 font-semibold"
               >
-                ← Back to Videos
+                ← Back to Video List
               </button>
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                {selectedVideo.embedUrl.endsWith('.mp4') ? (
-                  <video
-                    src={selectedVideo.embedUrl}
-                    controls
-                    className="w-full h-full rounded-lg bg-black"
-                    poster={selectedVideo.thumbnail}
-                  />
-                ) : (
-                  <iframe
-                    src={selectedVideo.embedUrl}
-                    title={selectedVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full rounded-lg"
-                  />
-                )}
+                <iframe
+                  src={selectedVideo.embedUrl}
+                  title={selectedVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full rounded-lg"
+                />
               </div>
               <h2 className="text-2xl font-bold mb-2">{selectedVideo.title}</h2>
               <p className="text-gray-600">{selectedVideo.description}</p>
@@ -123,7 +104,6 @@ export default function VideosPage() {
           )}
         </div>
       </main>
-      <Footer />
     </div>
   );
 } 

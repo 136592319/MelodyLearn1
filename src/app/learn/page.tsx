@@ -1,10 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BackButton from '@/components/BackButton';
 import { motion } from 'framer-motion';
+import BackButton from '@/components/BackButton';
 
 interface Lesson {
   id: string;
@@ -165,8 +163,7 @@ export default function LearnPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-pink-100">
-      <Navigation />
+    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-pink-100 pt-16">
       <BackButton />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -265,31 +262,22 @@ export default function LearnPage() {
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {lessons.map((lesson, index) => (
+              {lessons.map(lesson => (
                 <motion.div
                   key={lesson.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-white rounded-2xl shadow-lg p-6 cursor-pointer hover:shadow-xl transition-all"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col"
                   onClick={() => setSelectedLesson(lesson)}
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-purple-800">{lesson.title}</h3>
+                  <h3 className="text-2xl font-bold text-purple-800 mb-2">{lesson.title}</h3>
+                  <p className="text-gray-600 mb-4 flex-grow">{lesson.description}</p>
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="font-semibold text-purple-600 hover:text-purple-800">
+                      Start Learning &rarr;
+                    </span>
                     {completedLessons.includes(lesson.id) && (
-                      <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-                        Completed
-                      </span>
+                      <span className="text-green-500 font-bold">✓ Completed</span>
                     )}
-                  </div>
-                  <p className="text-gray-600 mb-4">{lesson.description}</p>
-                  <div className="flex items-center text-purple-600">
-                    <span>Start Learning</span>
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
                   </div>
                 </motion.div>
               ))}
@@ -297,7 +285,6 @@ export default function LearnPage() {
           )}
         </div>
       </main>
-      <Footer />
     </div>
   );
 } 

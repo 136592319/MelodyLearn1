@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import RhythmGame from '@/components/games/RhythmGame';
 import PitchGame from '@/components/games/PitchGame';
 import VirtualPiano from '@/components/games/VirtualPiano';
-import MemoryGame from '@/components/games/MemoryGame';
+import PianoBeatBuilder from '@/components/games/MemoryGame';
 import VolumeControl from '@/components/VolumeControl';
 import BackButton from '@/components/BackButton';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+
 
 export default function GamesPage() {
   const [activeGame, setActiveGame] = useState<string | null>(null);
@@ -37,22 +38,23 @@ export default function GamesPage() {
       component: <VirtualPiano volume={volume} />,
     },
     {
-      id: 'memory',
-      title: 'Music Memory',
-      description: 'Match the musical instruments!',
+      id: 'beatbuilder',
+      title: 'Piano Beat Builder',
+      description: 'Build your own melody loop with a piano!',
       icon: '🎼',
-      component: <MemoryGame volume={volume} />,
+      component: <PianoBeatBuilder volume={volume} />,
     },
   ];
 
+  const activeGameComponent = games.find((game) => game.id === activeGame)?.component;
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navigation />
-      <BackButton />
-      <main className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
+          <BackButton />
           <h1 className="text-3xl font-bold text-center mb-8">Music Games</h1>
-          
+
           {!activeGame ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {games.map((game) => (
@@ -69,19 +71,20 @@ export default function GamesPage() {
             </div>
           ) : (
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <button
-                onClick={() => setActiveGame(null)}
-                className="text-purple-600 hover:text-purple-800 mb-4"
-              >
-                ← Back to Games
-              </button>
-              <VolumeControl volume={volume} onVolumeChange={setVolume} />
-              {games.find((game) => game.id === activeGame)?.component}
+              <div className="flex justify-between items-center mb-4">
+                <button
+                  onClick={() => setActiveGame(null)}
+                  className="text-purple-600 hover:text-purple-800 font-semibold"
+                >
+                  ← Back to Games
+                </button>
+                <VolumeControl volume={volume} onVolumeChange={setVolume} />
+              </div>
+              {activeGameComponent}
             </div>
           )}
         </div>
       </main>
-      <Footer />
     </div>
   );
 } 
